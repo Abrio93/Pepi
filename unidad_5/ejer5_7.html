@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="ismael" content="ejercicio" />
+	<title>Relación 7 unidad 5</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script language="javascript">
+            fondo_c=prompt("Elige un color de fondo, rosa(R), azul claro(A), amarillo claro(Y) y verde claro(V)");
+            texto_c=prompt("Elige un color de texto, rojo(R), azul(A), amarillo(Y) y verde(V)");
+
+            fondo="vacio";
+            texto="vacio";
+            switch(fondo_c) {
+                case "R":
+                case "r":
+                    fondo="hotpink";
+                    break;
+                case "A":
+                case "a":
+                    fondo="lightblue";
+                    break;
+                case "Y":
+                case "y":
+                    fondo="lightyellow";
+                    break;
+                case "V":
+                case "v":
+                    fondo="lightgreen";
+                    break;
+                default:
+                    fondo="lightgrey";
+            }
+            switch(texto_c) {
+                case "R":
+                case "r":
+                    texto="red";
+                    break;
+                case "A":
+                case "a":
+                    texto="blue";
+                    break;
+                case "Y":
+                case "y":
+                    texto="yellow";
+                    break;
+                case "V":
+                case "v":
+                    texto="green";
+                    break;
+                default:
+                    texto="black";
+            }
+            document.write("<br><br><center>");
+                document.write("<table border=3 bgcolor="+fondo+">");
+                    document.write("<tr>");
+                        document.write("<td>");
+                                document.write("<p style='color:"+texto+"'>TEXTO CON COLOR</p>");
+                        document.write("</td>");
+                    document.write("</tr>");
+                document.write("</table>");
+            document.write("</center>");
+    </script>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

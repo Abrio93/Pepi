@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="ismael" content="ejercicio" />
+	<title>Ejercicio 10 de la Unidad 7</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script language="javascript">
+
+        window.onload=function(){
+            document.forms['calculadora']['pantalla'].focus();
+        }
+
+        function calcular(cal){
+            if(document.forms['calculadora']['pantalla']==""){
+                var visualizar="";
+            }else{
+                var visualizar = document.forms['calculadora']['pantalla'].value;
+            }
+            document.forms['calculadora']['pantalla'].value=visualizar+cal;
+        }
+        
+        function borrar(){
+            document.forms['calculadora']['pantalla'].value="";
+            document.forms['calculadora']['pantalla'].focus();
+        }
+
+        function resultado(){
+            document.forms['calculadora']['pantalla'].value=eval(document.forms['calculadora']['pantalla'].value);
+            document.forms['calculadora']['pantalla'].focus();
+            return false;
+        }
+    </script>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<br>
+<br>
+<form name="calculadora" onsubmit="return resultado()" autocomplete="off">
+    <div class="container text-center">
+        <h1 class="text-primary">Calculadora</h1>
+        <div class="row mt-3" style="height: 5rem;">
+            <div class="col-9" style="height: 5rem; ">
+                <input class="text-center" type="text" name="pantalla" style="height: 5rem; width: 100%; border: 2px solid black; background-color: rgb(193, 226, 255); font-size: 2rem;" /*disabled*//>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <div class="row" style="height: 5rem;">
+            <div class="col-3 mt-3">
+                <input class="btn btn-primary" name="valor1" onclick="calcular(1)" type="button" value="1" style="width: 100%; height:100%; border: 1px solid black;"/>
+            </div>
+            <div class="col-3 mt-3">
+                <input class="btn btn-primary " name="valor2" onclick="calcular(2)" type="button" value="2" style="width: 100%; height:100%; border: 1px solid black;"/>
+            </div>
+            <div class="col-3 mt-3">
+                <input class="btn btn-primary " name="valor3" onclick="calcular(3)" type="button" value="3" style="width: 100%; height:100%; border: 1px solid black;"/>
+            </div>
+            <div class="col-3 mt-3">
+                <input class="btn btn-info" name="valor+" onclick="calcular('+')" type="button" value="+" style="width: 100%; height:100%; border: 1px solid black;"/>
+            </div>
+        </div>
+        <div class="row" style="height: 5rem;">
+            <div class="col-3 mt-3">
+                <input class="btn btn-primary " name="valor4" onclick="calcular(4)" type="button" value="4" style="width: 100%; height:100%; border: 1px solid black;"/>
+            </div>
+            <div class="col-3 mt-3">
+                <input class="btn btn-primary " name="valor5" onclick="calcular(5)" type="button" value="5" style="width: 100%; height:100%; border: 1px solid black;"/>
+            </div>
+            <div class="col-3 mt-3">
+                <input class="btn btn-primary " name="valor6" onclick="calcular(6)" type="button" value="6" style="width: 100%; height:100%; border: 1px solid black;"/>
+            </div>
+            <div class="col-3 mt-3">
+                <input class="btn btn-info" name="valor-" onclick="calcular('-')" type="button" value="-" style="width: 100%; height:100%; border: 1px solid black;"/>
+            </div>
+        </div>
+        <div class="row" style="height: 5rem;">
+            <div class="col-3 mt-3">
+                <input class="btn btn-primary " name="valor7" onclick="calcular(7)" type="button" value="7" style="width: 100%; height:100%; border: 1px solid black;"/>
+            </div>
+            <div class="col-3 mt-3">
+                <input class="btn btn-primary " name="valor8" onclick="calcular(8)" type="button" value="8" style="width: 100%; height:100%; border: 1px solid black;"/>
+            </div>
+            <div class="col-3 mt-3">
+                <input class="btn btn-primary " name="valor9" onclick="calcular(9)" type="button" value="9" style="width: 100%; height:100%; border: 1px solid black;"/>
+            </div>
+            <div class="col-3 mt-3">
+                <input class="btn btn-info" name="valorx" onclick="calcular('*')" type="button" value="x" style="width: 100%; height:100%; border: 1px solid black;"/>
+            </div>
+        </div>
+        <div class="row" style="height: 5rem;">
+            <div class="col-3 mt-3">
+                <input class="btn btn-light text-primary" name="valorc" onclick="borrar()" type="button" value="C" style="width: 100%; height:100%; border: 1px solid #007BFF;"/>
+            </div>
+            <div class="col-3 mt-3">
+                <input class="btn btn-primary " name="valor0" onclick="calcular(0)" type="button" value="0" style="width: 100%; height:100%; border: 1px solid black;"/>
+            </div>
+            <div class="col-3 mt-3">
+                <input class="btn btn-primary " name="valor=" onclick="resultado()" type="button" value="=" style="width: 100%; height:100%; border: 1px solid black;"/>
+            </div>
+            <div class="col-3 mt-3">
+                <input class="btn btn-info" name="valor/" onclick="calcular('/')" type="button" value="/" style="width: 100%; height:100%; border: 1px solid black;"/>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="ismael" content="ejercicio" />
+	<title>Ejercicio 2 de la Unidad 7</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script language="javascript">
+
+    nombres = new Array(" MIGUEL", " ELENA", " JORGE", " CRISTINA", " IGNACIO", " ALICIA");
+
+    function menu(men){
+            indicador=parseInt(men.valor.value);
+            if(!isNaN(indicador)){
+                if(indicador>=1 && indicador <=8){
+                    switch(indicador){
+                        case 1:
+                            //Añade un nuevo elemento al array
+                            nuevo_nombre = prompt("Inserta un nuevo nombre");
+                            if(isNaN(nuevo_nombre)){
+                                document.write("<b>Array normal:</b> "+nombres+"<br/>"+"<br/>");
+                                nombres.push(nuevo_nombre);
+                                document.write("<b>Array normal con el nuevo elelemto:</b> "+nombres+"<br/>"+"<br/>");
+                            }else{
+                                document.write("Has introducido un numero");  
+                            } 
+                            break;
+                        case 2:
+                            //Concadena un array con lo que se le indique, texto, números, u otro array
+                            var array_concatenado_final = nombres.concat(" GIL", " SANCHEZ", " RODRIGUEZ", " ALONSO", " VEGA", " REY");
+                            document.write("<br /><br /><b>Array añadido final:</b> "+array_concatenado_final+"<br/>"+"<br/>");
+
+                            break;
+                        case 3:
+                            //Muestra un array en orden inverso
+                            var array_inverso = nombres.reverse();
+                            document.write("<b>Array en orden invertido:</b> "+array_inverso+"<br/>"+"<br/>");
+
+                            break;
+                        case 4:
+                            //Añade la cadena que le he pasado(puede ser otro array o números) al inicio.
+                            nombres.unshift(" GIL", " SANCHEZ", " RODRIGUEZ", " ALONSO", " VEGA", " REY");
+                            document.write("<b>Array añadido al principio:</b> "+nombres+"<br/>"+"<br/>");
+
+                            break;
+                        case 5:
+                            //Te elimina el primer elemento del array
+                            nombres.shift(nombres);
+                            document.write("<b>Array añadido al principio:</b> "+nombres+"<br/>"+"<br/>");
+
+                            break;
+                        case 6:
+                            //Te elimina el último elemento del array
+                            nombres.pop(nombres);
+                            document.write("<b>Array añadido al principio:</b> "+nombres+"<br/>"+"<br/>");
+
+                            break;
+                        case 7:
+                            //Le dices la posición donde quieres que empieze a mostrarte el array y otra posición indicando donde quieres que termine 
+                            var inicio = prompt("introduce el valor de inicio:");
+                            var final = prompt("introduce el valor del final:");
+                            var subconjunto = nombres.slice(inicio,final);
+                            document.write("<b>El array obtenido con los valores introducidos:</b> "+subconjunto+"<br/>"+"<br/>");
+
+                            break;
+                        case 8:
+                            //Ordena alfabéticamente el array
+                            document.write("<b>Array ordenado alfabeticamente:</b> "+nombres.sort());
+
+                            break;
+                        default:
+                            document.write("Ha ocurrido un error");
+                    }
+                }else{
+                    alert("Debe de intoducir un número de la lista");
+                }
+            }else{
+                alert("Debe de intoducir un número");
+            }
+    }
+    </script>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<center>
+<br>
+<br>
+<br>
+1.	Añadir un nuevo elementos al array.<br>
+2.	Concadena el array anterior con el siguiente que tiene los siguientes elementos: GIL, SANCHEZ, RODRIGUEZ, ALONSO, VEGA y REY.<br>
+3.	Invierte el orden del array.<br>
+4.	Añade nuevos elementos al inicio del array. Los elementos serian: GIL, SANCHEZ, RODRIGUEZ, ALONSO, VEGA y REY.<br>
+5.	Elimina el primer elemento del array.<br>
+6.	Elimina el último elemento del array.<br>
+7.	Devuelve un nuevo array con un subconjunto de los elementos del array. Me pedirá que introduzca el valor del inicio y del final<br>
+8.	Ordena alfabéticamente los elementos de un array.<br><br>
+Introduce un número de la lista
+<form method="POST">
+    <input type="text" name="valor" autofocus="">
+    <input type="button" name="" onclick="menu(this.form)" value="Aceptar"/>
+</form>
+
+</center>
+</body>
+</html>

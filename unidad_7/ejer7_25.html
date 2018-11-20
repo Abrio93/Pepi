@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html" />
+<meta name="ismael" content="ejercicio" />
+<title>Ejercicio 25 de la Unidad 7</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script language="javascript">
+
+        var miArraydepalabras = ["Lila", "Verde", "Azul", "Morado", "Rojo"];
+        var miArraypalabras = ["Lila", "Verde", "Azul", "Morado", "Rojo"];
+        var msg0 ='Sin ordenar: ' + miArraydepalabras +'<br />';
+        msg0 = msg0 + 'Ordenado: ' + miArraypalabras.sort()+'<br /><br />';
+        document.write(msg0);
+
+        var miArrayOriginal1 = [70, 800, 9];
+        var miArray1 = [70, 800, 9];
+        var msg1 ='Ordenado sin compareNum: ' + miArrayOriginal1 +'<br />';
+        msg1 = msg1 + 'Ordenado con compareNum: ' + miArray1.sort(deMenorAMayor)+'<br /><br />';
+        document.write(msg1);
+
+        var miArrayOriginal2 = [10, 2, 300, 50];
+        var miArray2 = [10, 2, 300, 50];
+        var msg2 ='Ordenado sin compareNum: ' + miArrayOriginal2 +'<br />';
+        msg2 = msg2 + 'Ordenado con compareNum: ' + miArray2.sort(deMenorAMayor)+'<br /><br />';
+        document.write(msg2);
+
+        var miArrayOriginal3 = [10, 30, 400, 5, 70, 8, 850];
+        var miArray3 = [10, 30, 400, 5, 70, 8, 850];
+        var msg3 ='Ordenado sin compareNum: ' + miArrayOriginal3 +'<br />';
+        msg3 = msg3 + 'Ordenado con compareNum: ' + miArray3.sort(deMenorAMayor)+'<br /><br />';
+        document.write(msg3);
+
+
+    function deMenorAMayor(elem1, elem2) {return elem1-elem2;}
+
+    //function deMayorAMenor(elem1, elem2) {return elem2-elem1;}
+
+</script>
+</head> 
+<body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

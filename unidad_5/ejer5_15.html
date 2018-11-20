@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+    <meta name="ismael" content="ejercicio" />
+    <html lang="es">
+    <meta charset="utf-8">
+	<title>Relacion 15 unidad 5</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script language="javascript">
+        fecha=prompt("Introduce una fecha en formato dd-mm-aa");
+
+        if(fecha.length==8){
+            document.write("<br /><br /><center>Naciste el día ")
+            for(i=0;i<fecha.length;i++){
+                if(i==0 || i==1 || i==3 || i==4 || i==6 || i==7){
+                    document.write("<b>"+fecha.charAt(i)+"</b>");
+                }else if(i==2){
+                    document.write(" del mes ");
+                }else if(i==5){
+                    document.write(" del año ");
+                }  
+            }
+        document.write("</center>")
+        }else{
+            document.write("<br /><br /><center><b>ERROR: La longitud de la fecha no es válida</b></center>");
+        }
+    </script>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

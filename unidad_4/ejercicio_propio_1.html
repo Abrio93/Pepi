@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="ismael" content="ejercicio" />
+	<title>Relación 1 ejercicio propio 1</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script language="javascript">
+            numero=parseInt(prompt("Introduce un número entero positivo"));
+            numero2=parseInt(prompt("Ahora introduce otro número para realizar las operaciones"));
+            
+            multiplicar=numero*numero2;
+            dividir=numero/numero2;
+            sumar=numero+numero2;
+            restar=numero-numero2;
+            
+            document.write("<center><br><h1 class='text-info'>Tabla de operaciones</h1><br>");
+            document.write("<table class='table table-hover'>");
+            
+            document.write("<tr align='center' class='bg-dark' style='color: white;'><td><b>Tipo de operación</b></td>");
+            document.write("<td><b>Primer número</b></td>");
+            document.write("<td><b>Segundo número</b></td>");
+            document.write("<td><b>Resultado</b></td>");
+            document.write("</tr>");
+            
+            document.write("<tr align='center'><td>Multiplicacíon</td>");
+            document.write("<td>"+numero+"</td>");
+            document.write("<td>"+numero2+"</td>");
+            document.write("<td><b>"+multiplicar+"</b></td></tr>");
+            
+            document.write("<tr align='center' class='table-info'><td>División</td>");
+            document.write("<td>"+numero+"</td>");
+            document.write("<td>"+numero2+"</td>");
+            document.write("<td><b>"+dividir+"</b></td></tr>");
+            
+            document.write("<tr align='center'><td>Suma</td>");
+            document.write("<td>"+numero+"</td>");
+            document.write("<td>"+numero2+"</td>");
+            document.write("<td><b>"+sumar+"</b></td></tr>");
+            
+            document.write("<tr align='center' class='table-info'><td>Resta</td>");
+            document.write("<td>"+numero+"</td>");
+            document.write("<td>"+numero2+"</td>");
+            document.write("<td><b>"+restar+"</b></td>");
+            
+            document.write("</tr></table></center>");
+    </script>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

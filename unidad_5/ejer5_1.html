@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="ismael" content="ejercicio" />
+	<title>Relación 1 unidad 5</title>
+    <script language="javascript">
+            function conversion(pes){
+            pesetas=parseInt(pes.caja_pesetas.value);
+            cuenta=pesetas/166.386;
+            pes.caja_euros.value=cuenta;
+            }
+            function eurosfun(eur){
+            pesetas=parseInt(eur.caja_euros2.value);
+            cuenta=pesetas*166.386;
+            eur.caja_pesetas2.value=cuenta;
+            }
+    </script>
+</head>
+<body>
+<h1>Pasa de Pesetas a Euros</h1><br />
+    <form name="form1">
+        Pesetas: <input type="text" name="caja_pesetas"/>
+        <input type="button" value="Convertir a Euros" onclick="conversion(this.form)"/>
+        Euros: <input type="text" name="caja_euros"/><br /><br />
+    <hr /><br />
+        Euros: <input type="text" name="caja_euros2"/>
+        <input type="button" value="Convertir a Pesetas" onclick="eurosfun(this.form)"/>
+        Pesetas: <input type="text" name="caja_pesetas2"/>
+    </form>
+</body>
+</html>

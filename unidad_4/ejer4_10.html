@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="ismael" content="ejercicio" />
+	<title>Relación 1 unidad 10</title>
+    <script language="javascript">
+            function calculo(cal){
+            numero=cal.texto.value;
+            num=numero-1;
+                for(i=num;i>=1;i--){
+                    numero=numero*i;            
+                }
+            cal.resultado.value=numero;
+            }
+    </script>
+</head>
+<body>
+<h1>Calculo del factorial</h1>
+    <form name="form1" action="" method="post">
+        Introduce una cantidad: <input type="text" name="texto"/>
+        <input type="button" value="Calcula" onclick="calculo(this.form)"/><br /><br />
+        Resultado: <input type="text" name="resultado"/>
+    </form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="ismael" content="ejercicio" />
+
+	<title>Relación 1 unidad 4</title>
+    <script language="javascript">
+        numero=parseInt(prompt("Introduce un número entero positivo"));
+        if(isNaN(numero)){
+            document.write("<center><h1>Por favor introduzca un número entero positivo</h1></center>");
+        }
+        else{
+            contador=0;
+            num=numero;
+            while(numero>1){
+                numero=numero/10;
+                contador=contador+1;    
+            }
+            document.write("<center><table border='2'><tr><td style='background-color: #00ffe1; text-align: center'>El número introducido es: "+num+"</td></tr><tr><td style='text-align: center'>El número tiene "+contador+" cifras</td></tr></table></center>");
+        }
+    </script>
+</head>
+
+<body>
+
+
+
+</body>
+</html>

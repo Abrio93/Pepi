@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="ismael" content="ejercicio" />
+	<title>validacion de formularios</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script language="javascript">
+        function convertir(cvtr){
+
+        }
+
+        function reiniciar(re){
+            re.cantidad.value="";
+            re.resultado.value="";
+        }
+    </script>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<form class="container mt-5">
+    <div class="row">
+        <h1 class="col-12 text-danger">Equivalentes de Longitud</h1>
+    </div>
+    <div class="row mt-3">
+        <p class="col-5 text-danger">Primero, escriba la cantidad a convertir aquí:</p>
+        <input class="col-7" type="text" name="cantidad"/>
+        <p class="col-12 text-danger mt-2">Luego, haga su elección en los botones radiales:</p>
+    </div>
+    <div class="row mt-3" style="background-color: #96a7ff;">
+        <div class="col-1" style="background-color: white;">
+            <p class="text-danger mt-3">De:</p>
+        </div>
+        <div class="col-2">
+            <div class="row ml-1">
+                <p>Centímetros</p>
+            </div>
+            <div class="row ml-5">
+                <input type="radio" name="de" checked/>
+            </div>
+        </div>
+        <div class="col-1">
+            <div class="row">
+                <p>Pulgadas</p>
+            </div>
+            <div class="row ml-3">
+                <input type="radio" name="de"/>
+            </div>
+        </div>
+        <div class="col-1">
+            <div class="row ml-1">
+                <p>Pies</p>
+            </div>
+            <div class="row ml-2">
+                <input type="radio" name="de"/>
+            </div>
+        </div>
+        <div class="col-1">
+            <div class="row">
+                <p>Yardas</p>
+            </div>
+            <div class="row ml-1">
+                <input type="radio" name="de"/>
+            </div>
+        </div>
+        <div class="col-1">
+            <div class="row">
+                <p>Metros</p>
+            </div>
+            <div class="row ml-2">
+                <input type="radio" name="de"/>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="row">
+                <p>Cadenas</p>
+            </div>
+            <div class="row ml-2">
+                <input type="radio" name="de"/>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="row">
+                <p>Kilómetros</p>
+            </div>
+            <div class="row ml-3">
+                <input type="radio" name="de"/>
+            </div>
+        </div>
+        <div class="col-1">
+            <div class="row">
+                <p>Millas</p>
+            </div>
+            <div class="row ml-1">
+                <input type="radio" name="de"/>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="background-color: #96a7ff;">
+        <div class="col-1" style="background-color: white;">
+            <p class="text-danger mt-3">A:</p>
+        </div>
+        <div class="col-2">
+            <div class="row ml-1">
+                <p>Centímetros</p>
+            </div>
+            <div class="row ml-5 mb-2">
+                <input type="radio" name="a" checked/>
+            </div>
+        </div>
+        <div class="col-1">
+            <div class="row">
+                <p>Pulgadas</p>
+            </div>
+            <div class="row ml-3">
+                <input type="radio" name="a"/>
+            </div>
+        </div>
+        <div class="col-1">
+            <div class="row ml-1">
+                <p>Pies</p>
+            </div>
+            <div class="row ml-2">
+                <input type="radio" name="a"/>
+            </div>
+        </div>
+        <div class="col-1">
+            <div class="row">
+                <p>Yardas</p>
+            </div>
+            <div class="row ml-1">
+                <input type="radio" name="a"/>
+            </div>
+        </div>
+        <div class="col-1">
+            <div class="row">
+                <p>Metros</p>
+            </div>
+            <div class="row ml-2">
+                <input type="radio" name="a"/>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="row">
+                <p>Cadenas</p>
+            </div>
+            <div class="row ml-2">
+                <input type="radio" name="a"/>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="row">
+                <p>Kilómetros</p>
+            </div>
+            <div class="row ml-3">
+                <input type="radio" name="a"/>
+            </div>
+        </div>
+        <div class="col-1">
+            <div class="row">
+                <p>Millas</p>
+            </div>
+            <div class="row ml-1">
+                <input type="radio" name="a"/>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-1 mb-1">
+        <div class="col-7 text-right">
+            <input type="button" value="Haz click para convertir" width="100%" onclick="convertir(this.form)"/>
+        </div>
+        <div class="col-5">
+            <input type="button" value="Reiniciar" width="100%" onclick="reiniciar(this.form)"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2"></div>
+        <input class="col-8" type="text" name="resultado" width="100%"/>
+        <div class="col-2"></div>
+    </div>
+</form>
+
+</body>
+</html>

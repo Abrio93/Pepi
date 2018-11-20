@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="ismael" content="ejercicio" />
+	<title>Ejercicio 6 de la Unidad 6</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script language="javascript">
+        
+        var unidades = new Array(5000, 2000, 1000, 500, 200, 100, 50, 25, 10, 5, 1);
+        var cantidad = parseInt(prompt("Introduce una cantidad"));
+        
+        
+        if(!isNaN(cantidad)){
+            document.write("<br /><br /><br /><div class='container'><table class='table table-hover' style='text-align: center; border: 2px solid black;'>");
+            document.write("<tr><td class='bg-info'><b>Desglose de la cantidad: "+cantidad+"</b></td></tr>");
+            for(i=0;i<unidades.length;i++){
+
+                numero_billetes = cantidad/unidades[i];
+                cantidad = cantidad%unidades[i];
+                
+                if(numero_billetes>=1){
+                    document.write("<tr><td style='border: 2px solid black;'><b>Unidades de "+unidades[i]+": "+Math.trunc(numero_billetes)+"</b><br /></td></tr>");
+                }else{
+                    document.write("<tr><td style='border: 2px solid black;'>Unidades de "+unidades[i]+": "+Math.trunc(numero_billetes)+"<br /></td></tr>");
+                }
+                
+            }
+            document.write("</table</div>");    
+        }else{
+            alert("Debe de introducir un número");
+        }
+
+    </script>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html" />
+<meta name="ismael" content="ejercicio" />
+<title>Ejercicio 20 de la Unidad 7</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script language="javascript">
+    
+    function rellenar(re){
+        var fecha = new Date();
+        re.ano.value=fecha.getFullYear();
+        re.mes.value=fecha.getMonth()+1;
+        re.dia.value=fecha.getDate();
+        re.hora.value=fecha.getHours();
+        re.minutos.value=fecha.getMinutes();
+        re.segundos.value=fecha.getSeconds();
+        re.total.value=re.dia.value+"/"+re.mes.value+"/"+re.ano.value+" "+re.hora.value+":"+re.minutos.value+":"+re.segundos.value;
+    }
+    
+</script>
+</head> 
+<body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ 
+    <div class="container text-center mt-5">
+        <div class="row mt-5">
+            <div class="col-2"></div>
+            <div class="col-8" style="height: 32rem; background-color: #faff7a;">
+                <form action="" class="mt-5">
+                    Año: &nbsp;<input type="text" name="ano" style="width: 75%;"/> <br><br>
+                    Mes: &nbsp;<input type="text" name="mes" style="width: 75%;"/> <br><br>
+                    Día: &nbsp;<input type="text" name="dia" style="width: 75%;"/> <br><br>
+                    Hora: &nbsp;<input type="text" name="hora" style="width: 75%;"/> <br><br>
+                    Minutos: &nbsp;<input type="text" name="minutos" style="width: 75%;"/> <br><br>
+                    Segundos: &nbsp;<input type="text" name="segundos" style="width: 71%;"/> <br><br>
+                    Total: &nbsp;<input type="text" name="total" style="width: 75%;"/> <br><br>
+                    <input type="button" value="Pulsar" class="mt-4" onclick="rellenar(this.form)">
+                </form>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>

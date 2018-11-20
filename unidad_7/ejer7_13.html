@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="ismael" content="ejercicio" />
+	<title>Ejercicio 13 de la Unidad 7</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script language="javascript">
+        function NumeroQuiniela(nombre, numero){ 
+            this.nombre = nombre;
+            this.numero = numero;
+            this.mostrar = mostrar;
+            this.azar = 0;
+
+        }
+        function bolillero(){
+            this.azar = Math.floor((Math.random() * 10) + 1);
+        }
+        function mostrar(){
+            document.write("<br><br>Número al Azar: " + this.azar);
+            document.write("<br>"+ this.nombre);
+            document.write(" ha elegido " + this.numero);
+        }
+        function mostrar_azar(){
+            document.write("<br><br>Número al Azar: " + this.azar);
+        }
+
+        dato1=prompt("introduce tu nombre");
+        dato2=parseInt(prompt("introduce el número a escoger"));
+        Cliente1 = new NumeroQuiniela(dato1, dato2);
+
+        dato3=prompt("introduce tu nombre");
+        dato4=parseInt(prompt("introduce el número a escoger"));
+        Cliente2 = new NumeroQuiniela(dato3, dato4);
+
+        azar1 = new bolillero();
+        
+        azar1.mostrar_azar();
+        Cliente1.mostrar();
+        Cliente2.mostrar();
+        
+        nombrejuan=Cliente1.nombre;
+        nombreana=Cliente2.nombre;
+        numerojuan=Cliente1.numero;
+        numeroana=Cliente2.numero;
+        aleatorio=azar1.azar;
+        
+        if(numerojuan == aleatorio || numeroana == aleatorio){
+            if(numerojuan == aleatorio){
+                document.write("<br />"+nombrejuan+" ha ganado.<br />");
+                document.write(nombreana+" no ha sido agraciado.<br />");
+            }else if(numeroana == aleatorio){
+                document.write("<br />"+nombreana+" ha ganado.<br />");
+                document.write(nombrejuan+" no ha sido agraciado.<br />");
+            }
+        }
+    </script>
+</head> 
+<body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
+    
+</body>
+</html>

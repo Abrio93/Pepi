@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="ismael" content="ejercicio" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<title>Relación 1 ejercicio propio 2</title>
+    <script language="javascript">
+    function calculo(cal){
+        numerouno=parseInt(cal.numero.value);
+        numerodos=parseInt(cal.numero2.value);
+        switch(cal.tipo.value) {
+            case "multiplicar":
+                cuenta=numerouno*numerodos;
+                cal.resultado.value=cuenta;
+                break;
+            case "dividir":
+                cuenta=numerouno/numerodos;
+                cal.resultado.value=cuenta;
+                break;
+            case "sumar":
+                cuenta=numerouno+numerodos;
+                cal.resultado.value=cuenta;
+                break;
+            case "restar":
+                cuenta=numerouno-numerodos;
+                cal.resultado.value=cuenta;
+                break;
+        }   
+    }
+    </script>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<div class="container"><br /><br />
+    <center>
+        <form action="" method="post" name="form1">
+        <h1>¿Qué quieres hacer?</h1><br />
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Introduce el primer número</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Introduce un número entero positivo" style="text-align: center;" name="numero">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Introduce el segundo número</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Introduce un número entero positivo" style="text-align: center;" name="numero2">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Escribe una opción</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="sumar-restar-multiplicar-dividir" style="text-align: center;" name="tipo">
+        </div>
+        <!--<div class="form-group">
+            <label for="exampleFormControlSelect2">Elige una opción</label>
+            <select multiple class="form-control" id="exampleFormControlSelect2" style="text-align: center;">
+                <option name="opcion" value="multiplicar">Multiplicar</option>
+                <option name="opcion" value="dividir">Dividir</option>
+                <option name="opcion" value="sumar">Sumar</option>
+                <option name="opcion" value="restar">Restar</option>
+            </select>
+        </div>-->
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Resultado</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Aquí se visualizará el resultado" style="text-align: center;" name="resultado">
+        </div>
+        <input type="button" value="Calcular" onclick="calculo(this.form)"  class="btn btn-primary"/>
+        </form>
+    </center>
+</div>
+</body>
+</html>

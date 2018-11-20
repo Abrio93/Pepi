@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="ismael" content="ejercicio" />
+	<title>Ejercicio 5 de la Unidad 6</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script language="javascript">
+
+    var palabras_espana = new Array();
+    palabras_espana[0] = "facebook";
+    palabras_espana[1] = "tuenti";
+    palabras_espana[2] = "youtube";
+    palabras_espana[3] = "hotmail";
+    palabras_espana[4] = "marca";
+
+    var palabras_suiza = new Array();
+    palabras_suiza[0] = "facebook";
+    palabras_suiza[1] = "youtube";
+    palabras_suiza[2] = "hotmail";
+    palabras_suiza[3] = "google";
+    palabras_suiza[4] = "blick";
+
+    var palabras_portugal = new Array();
+    palabras_portugal[0] = "facebook";
+    palabras_portugal[1] = "youtube";
+    palabras_portugal[2] = "hotmail";
+    palabras_portugal[3] = "jogos";
+    palabras_portugal[4] = "download";
+
+    var palabras_mas_buscadas = new Array();
+    palabras_mas_buscadas[0] = palabras_espana;
+    palabras_mas_buscadas[1] = palabras_suiza;
+    palabras_mas_buscadas[2] = palabras_portugal;
+
+    contar = palabras_mas_buscadas.length;
+
+    var pais = new Array();
+    pais[0] = "España";
+    pais[1] = "Suiza";
+    pais[2] = "Portugal";
+
+    document.write("<br /><br /><br /><div class='container'><table class='table' border='1' style='text-align: center;'>");
+    document.write("<tr class='bg-dark text-light'>");
+    document.write("<th>[Pais,Ranking]</th>");
+    document.write("<th>0</th><th>1</th><th>2</th><th>3</th><th>4</th>");
+    document.write("</tr>");
+    for (var i = 0; i <=contar-1; i++){
+        document.write("<tr>");
+        document.write("<td class='bg-dark text-light'> "+ i +" [ " + pais[i] + " ] </td>");
+
+        for (var j = 0; j <= contar+1; j++){
+            document.write("<td class='bg-warning'>"+ palabras_mas_buscadas[i][j] +"</td>");
+        }
+        document.write("</tr>");
+    }
+    document.write("</table></div>");
+    </script>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

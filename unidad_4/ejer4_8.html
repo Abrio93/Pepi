@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="ismael" content="ejercicio" />
+	<title>Relación 1 unidad 8</title>
+    <script language="javascript">
+            contador=0;
+            for(var i=1;i<=300;i++){
+                    cuatro=i%4;
+                    nueve=i%9;
+                    if(contador==10){
+                        document.write("<br>");
+                        contador=0;
+                    }
+                    if(cuatro==0){
+                        document.write("<font size='4' style='color: green; font-family: Arial:'>"+i+"</font>,");
+                        contador++;
+                    }
+                    else if(nueve==0){
+                        document.write("<font size='-2' style='color: red; font-family: Arial:'>"+i+"</font>,");
+                        contador++;
+                    }
+                    else{
+                        document.write("<font style='font-family: Arial:'>"+i+"</font>,");
+                        contador++;
+                    }    
+            }
+    </script>
+</head>
+<body>
+</body>
+</html>

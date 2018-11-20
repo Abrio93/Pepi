@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="ismael" content="ejercicio" />
+	<title>Relación 2 unidad 5</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script language="javascript">
+            function tipo(t){
+                valor=parseInt(t.nota.value);
+                if(!isNaN(valor)){
+                    if(valor>=0 && valor <5){
+                        document.write("SUSPENSO");
+                    }
+                    else if(valor>=5 && valor <=10){
+                        document.write("APROBADO");
+                    }
+                    else{
+                        document.write("ERROR: La nota introducida no es válida");
+                    }
+                }
+                else{
+                    document.write("El valor debe de ser numérico");
+                }
+            }
+    </script>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<br /><br /><br />
+<form action="" method="post" style="margin-left: 250px;">
+    <b>Introduce la nota que has sacado en el examen:</b> <input type="text" name="nota"/><br /><br />
+    <input type="button" name="boton" onclick="tipo(this.form)" value="Aceptar" style="margin-left: 230px;"/>
+</form>
+</body>
+</html>

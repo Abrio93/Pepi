@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8 de la Unidad 7</title>
+	<script type="text/javascript">
+		function documento(dni){
+			numero_dni=parseInt(dni.dni.value);
+			if(!isNaN(numero_dni)){
+				if(numero_dni.length < 8){
+					alert("debes de introducir 8 números");
+				}else{
+					cuenta=numero_dni%23;
+					dni.asignacion[cuenta+1].selected=true;
+				}
+			}else{
+				alert("Debe de introducir un valor numérico");
+			}
+			
+		}
+    </script>
+</head>
+
+<body>
+    DNI:<br>
+    <form>
+    	<input type="text" name="dni" />	
+    	<select name="asignacion">
+			<option>Letra del NIF</option>
+			<option value="0">T</option>
+    		<option value="1">R</option>
+    		<option value="2">W</option>
+    		<option value="3">A</option>
+    		<option value="4">G</option>
+    		<option value="5">M</option>
+    		<option value="6">Y</option>
+    		<option value="7">F</option>
+    		<option value="8">P</option>
+    		<option value="9">D</option>
+    		<option value="10">X</option>
+    		<option value="11">B</option>
+    		<option value="12">N</option>
+    		<option value="13">J</option>
+    		<option value="14">Z</option>
+    		<option value="15">S</option>
+    		<option value="16">Q</option>
+    		<option value="17">V</option>
+    		<option value="18">H</option>
+    		<option value="19">L</option>
+    		<option value="20">C</option>
+    		<option value="21">K</option>
+    		<option value="22">E</option>
+    	</select>
+    	<input type="button" name="vale" value="Ok" onclick="documento(this.form)"/>
+    </form>
+</body>
+</html>

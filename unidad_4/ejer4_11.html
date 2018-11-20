@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="ismael" content="ejercicio" />
+	<title>Relación 1 unidad 11</title>
+    <script language="javascript">
+            function calculo(cal){
+            cuenta=eval(cal.texto.value);
+            cal.resultado.value=cuenta;
+            }
+    </script>
+</head>
+<body>
+<center>
+    <h1>Calculo del factorial</h1>
+    <form name="form1" action="" method="post">
+        <p style="color: green;">
+            Introduzca la expresión: <input type="text" name="texto"/><br /><br />
+            Resultado: <input type="text" name="resultado"/><br /><br />
+            <input type="button" value="Evaluar" onclick="calculo(this.form)" style="color: green;"/>
+        </p>
+    </form>
+</center>
+</body>
+</html>

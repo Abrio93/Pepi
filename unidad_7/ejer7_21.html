@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html" />
+<meta name="ismael" content="ejercicio" />
+<title>Ejercicio 21 de la Unidad 7</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script language="javascript">
+    
+    function comprobar(comp){
+        numero=parseInt(comp.numero.value);
+        try{
+            if(numero > 10){
+                throw "El número es mayor que 10";
+            }
+            
+            if(numero < 5){
+                throw "El número es menor que 5";
+            }
+
+            if(isNaN(numero)){
+                throw "Debe introducir un valor numérico";
+            }
+        }catch(error){
+            alert(error);
+        }
+    }
+    
+</script>
+</head> 
+<body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ 
+    <div class="container text-center mt-5">
+        <div class="row mt-5">
+            <div class="col-2"></div>
+            <div class="col-8" style="height: 14rem; background-color: #faff7a;">
+                <form action="" class="mt-5">
+                    Introduce un número: &nbsp;<input type="text" name="numero" style="width: 75%;"/> <br><br>
+                    <input type="button" value="Pulsar" class="mt-4" onclick="comprobar(this.form)">
+                </form>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>

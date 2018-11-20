@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="ismael" content="ejercicio" />
+	<title>validacion de formularios</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script language="javascript">
+		function validacion(val){
+            nombre=val.nombre.value;
+            edad=parseInt(val.edad.value);
+            fecha=val.fecha.value;
+
+            interes=val.interes.value;
+            if(nombre.length > 0){
+                
+                if(!isNaN(edad)){
+                    if(edad >= 18){
+                        if(interes != ""){
+                            if(fecha != ""){
+                                alert("Todo correcto");
+                            }else{
+                                val.fecha.focus();
+                            }
+                        }else{
+                            val.interes.focus();
+                        }
+                    }else{
+                        alert("Debe de tener al menos 18 años.");
+                        val.edad.focus();
+                    }
+                }else{
+                    alert("Debe de introducir un valor numérico en el campo edad.");
+                    val.edad.focus();  
+                }
+
+            }else{
+                alert("Debe de rellenar el campo nombre.");
+                val.nombre.focus();
+            }
+        }
+    </script>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<form class="container mt-5">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">Nombre</label>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="Escriba su nombre" name="nombre">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputPassword4">Edad</label>
+            <input type="text" class="form-control" id="inputPassword4" placeholder="Escriba su edad" name="edad">
+        </div>
+    </div>
+    <label for="inputEmail4">Interés</label>
+    <select class="form-control" name="interes">
+        <option value="">Elige una opción</option>
+        <option value="1">Contacto comercial</option>
+        <option value="2">Atención al cliente</option>
+        <option value="3">Contacto de proveedores</option>
+    </select>
+    <br>
+    <div class="row">
+        <div class="col-2 mt-2">
+            Fecha de nacimiento:
+        </div>
+        <div class="col-5">
+            <input class="form-control" type="date" name="fecha" value="">
+        </div>
+        <div class="col-5"></div>
+    </div>
+    <br>
+    <input class="btn btn-primary" value="Enviar" onclick="validacion(this.form)" />
+</form>
+
+</body>
+</html>

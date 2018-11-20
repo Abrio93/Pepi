@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="ismael" content="ejercicio" />
+	<title>Ejercicio 15 de la Unidad 7</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script language="javascript">
+        function Persona(nombre, apellidos, dni){ 
+            this.nombre = nombre;
+            this.apellidos = apellidos;
+            this.dni = dni;
+            this.setDatos = setDatos;
+            this.getDatos = getDatos;
+
+        }
+        function getDatos(apellidos, dni){
+            this.apellidos = apellidos;
+            this.dni = dni;
+        }
+        function setDatos(){
+            document.write("Nombre: "+ this.nombre+"<br>");
+            document.write("Apellido: " + this.apellidos+"<br>");
+            document.write("DNI: " + this.dni+"<br><br>");
+        }
+
+        persona1 = new Persona("Ismael", "Abrio González", "");
+        persona2 = new Persona("Manuel", "", "44678934-X");
+        
+        document.write("<h2>Datos iniciales</h2>");
+        persona1.setDatos();
+        persona2.setDatos();
+
+        document.write("<h2>Cambiamos datos</h2>");
+        persona1.getDatos("Hernandez Perez", "29616881-B");
+        persona2.getDatos("Gomez Maestre", "44678934-X");
+        persona1.setDatos();
+        persona2.setDatos();
+    </script>
+</head> 
+<body>
+<body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    
+</body>
+</html>
