@@ -8,65 +8,96 @@
     <title>Titulo</title>
     <script lang="text/javascript">
         function validar(){
+            meses = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            meses_bisiesto = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
             nombre = document.forms.registro.nombre.value;
             apellidos = document.forms.registro.apellidos.value;
             email = document.forms.registro.email.value;
             web = document.forms.registro.web.value;
+            edad = document.forms.registro.edad.value;
             dia = document.forms.registro.dia.value;
+            mes = document.forms.registro.mes.value;
+            ano = document.forms.registro.ano.value;
             usuario = document.forms.registro.usuario.value;
             clave = document.forms.registro.clave.value;
             clave_repeat = document.forms.registro.clave_repeat.value;
             if(nombre == ""){
                 alert("El nombre no debe de quedar vacío");
                 document.forms.registro.nombre.focus();
-                exit(1);
+                return false;
             }
             if(apellidos == ""){
                 alert("Los apellidos no deben de quedar vacíos");
                 document.forms.registro.apellidos.focus();
-                exit(1);
+                return false;
             }
             if(email == ""){
                 alert("El email no debe de quedar vacío");
                 document.forms.registro.email.focus();
-                exit(1);
+                return false;
             }
             if(email.indexOf("@") == -1){
                 alert("El email no es correcto");
                 document.forms.registro.email.focus();
-                exit(1);
+                return false;
             }
             if(web != ""){
                 if(web.indexOf("http://") == -1){
                     alert("La web tiene que tener http:// o https://");
                     document.forms.registro.web.focus();
-                    exit(1);
+                    return false;
+                }
+            }
+            if(edad != ""){
+                if(edad < 1){
+                    alert("La edad no es correcta");
+                    document.forms.registro.edad.focus();
+                    return false;
                 }
             }
             if(dia < 1){
                 alert("El dia tiene que ser un numero entre 1 y 31");
                 document.forms.registro.dia.focus();
-                exit(1);
+                return false;
+            }
+            if(ano > 1899){
+                if(ano % 4 == 0 && (ano % 100 != 0 || ano % 400 == 0)){
+                    if(dia > meses_bisiesto[mes]){
+                        alert("El dia no es correcto para el año escrito");
+                        document.forms.registro.dia.focus();
+                        return false;
+                    }
+                }else{
+                    if(dia > meses[mes]){
+                        alert("El dia no es correcto para el año escrito");
+                        document.forms.registro.dia.focus();
+                        return false;
+                    }
+                }
+            }else{
+                alert("El año no es correcto");
+                document.forms.registro.ano.focus();
+                return false;
             }
             if(usuario == ""){
                 alert("El usuario no debe de quedar vacío");
                 document.forms.registro.usuario.focus();
-                exit(1);
+                return false;
             }
             if(clave == ""){
                 alert("La clave no debe de quedar vacío");
                 document.forms.registro.clave.focus();
-                exit(1);
+                return false;
             }
             if(clave_repeat == ""){
                 alert("Repita su clave");
                 document.forms.registro.clave_repeat.focus();
-                exit(1);
+                return false;
             }
             if(clave_repeat != clave){
                 alert("Las claves no coinciden");
                 document.forms.registro.clave_repeat.focus();
-                exit(1);
+                return false;
             }
         }
     </script>
@@ -128,19 +159,18 @@
                         <input type="number" name="dia">
                         <label>de</label>
                         <select name="mes">
-                            <option value="0"></option>
-                            <option value="1">Enero</option>
-                            <option value="2">Febrero</option>
-                            <option value="3">Marzo</option>
-                            <option value="4">Abril</option>
-                            <option value="5">Mayo</option>
-                            <option value="6">Junio</option>
-                            <option value="7">Julio</option>
-                            <option value="8">Agosto</option>
-                            <option value="9">Septiembr</option>
-                            <option value="10">Octubre</option>
-                            <option value="11">Noviembre</option>
-                            <option value="12">Diciembre</option>
+                            <option value="0">Enero</option>
+                            <option value="1">Febrero</option>
+                            <option value="2">Marzo</option>
+                            <option value="3">Abril</option>
+                            <option value="4">Mayo</option>
+                            <option value="5">Junio</option>
+                            <option value="6">Julio</option>
+                            <option value="7">Agosto</option>
+                            <option value="8">Septiembr</option>
+                            <option value="9">Octubre</option>
+                            <option value="10">Noviembre</option>
+                            <option value="11">Diciembre</option>
                         </select>
                         <label>de</label>
                         <input type="text" name="ano">
