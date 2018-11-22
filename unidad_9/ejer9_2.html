@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html" />
 	<meta name="ismael" content="ejercicio" />
-	<title></title>
+	<title>Ejercicio 3 de la Unidad 7</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script language="javascript">
 
@@ -12,9 +12,12 @@
                 adddlert("Bienvenido Usuario!");
             }catch(error){
                 txt="En esta página hay un error.\n\n";
-                txt+="Descripción del error: "+error.mensaje+"\n\n";
-                txt+="Pulsa Ok para continuar.\n\n";
-                alert(txt);
+                txt+="Pulsa Ok para continuar viendo la página, o cancelar para volver a la página de la plataforma";
+                resultado = confirm(txt);
+
+                if(resultado == false){
+                    location.href = "http://plataforma.siges21.com/login/index.php";
+                }
             }
         }
         
@@ -26,8 +29,10 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 <form>
-    <br>
-    <input type="button" name="" onclick="mensaje(this.form)" value="Ver que hace"/>
+    
+    <center>
+        <input class="mt-5" type="button" name="" onclick="mensaje(this.form)" value="Ver que hace"/>
+    </center>
 </form>
 </body>
 </html>
