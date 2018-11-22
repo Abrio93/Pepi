@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html" />
+<meta name="ismael" content="ejercicio" />
+<title>Ejercicio 4 de la Unidad 9</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script language="javascript">
+
+    function crear(crea){
+        ancho=parseInt(crea.ancho.value);
+        alto=parseInt(crea.alto.value);
+        abrir_ventana = window.open ("ejer9_4-ventana.html", "_blank", "width="+ancho+",height="+alto+"")
+    }
+
+    function cerrar(){
+        abrir_ventana.close();
+    }
+    
+</script>
+</head> 
+<body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <div class="container text-center mt-5">
+        <div class="row">
+            <div class="col-12">
+                <h2>Introduce el alto y ancho de la ventama:</h2>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-2"></div>
+            <div class="col-8" style="height: 15rem; background-color: #faff7a;">
+                <form action="" class="mt-5">
+                 ANCHO DE LA VENTANA: &nbsp;<input type="text" name="ancho"/> <br><br>
+                 ALTO DE LA VENTANA: &nbsp;<input type="text" name="alto"/> <br>
+                 <input type="button" value="Crear ventana" class="mt-4" onclick="crear(this.form)">&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="Cerrar ventana" onclick="cerrar(this.form)">
+                </form>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+    
+</body>
+</html>
