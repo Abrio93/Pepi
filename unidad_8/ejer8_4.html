@@ -55,20 +55,25 @@
                     return false;
                 }
             }
-            if(dia < 1){
+			if(isNaN(mes) && (mes < 1 || mes > 12)){
+                alert("El mes no es correcto");
+                document.forms.registro.mes.focus();
+                return false;
+			}
+            if(isNaN(dia) && (dia < 1 || dia > 31)){
                 alert("El dia tiene que ser un numero entre 1 y 31");
                 document.forms.registro.dia.focus();
                 return false;
             }
-            if(ano > 1899){
+            if(!isNaN(ano) && ano > 1899){
                 if(ano % 4 == 0 && (ano % 100 != 0 || ano % 400 == 0)){
-                    if(dia > meses_bisiesto[mes]){
+                    if(dia > meses_bisiesto[mes]+1){
                         alert("El dia no es correcto para el año escrito");
                         document.forms.registro.dia.focus();
                         return false;
                     }
                 }else{
-                    if(dia > meses[mes]){
+                    if(dia > meses[mes]+1){
                         alert("El dia no es correcto para el año escrito");
                         document.forms.registro.dia.focus();
                         return false;
