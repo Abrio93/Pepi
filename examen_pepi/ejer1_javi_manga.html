@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <title></title>
+
+<script lang="text/javascript">
+    var contestado = 0;
+    var correcto = 0;
+    var error = Array();
+
+    function comprobar(){
+        if(document.forms.preguntas.primera.value == ""){
+            alert("No has respondido la primera pregunta");
+        }else{
+            contestado++;
+        }
+        if(document.forms.preguntas.segunda.value == ""){
+            alert("No has respondido la segunda pregunta");
+        }else{
+            contestado++;
+        }
+        if(document.forms.preguntas.tercera.value == ""){
+            alert("No has respondido la tercera pregunta");
+        }else{
+            contestado++;
+        }
+        if(document.forms.preguntas.cuarta.value == ""){
+            alert("No has respondido la cuarta pregunta");
+        }else{
+            contestado++;
+        }
+        if(document.forms.preguntas.quinta.value == ""){
+            alert("No has respondido la quinta pregunta");
+        }else{
+            contestado++;
+        }
+        if(contestado == 5){
+            alert("Todas las preguntas han sido contestadas, puedes proceder con la correccion");
+        }
+    }
+
+    function corregir(){
+        if(contestado != 5){
+            alert("No has comprobado las preguntas");
+        }else{
+            if(document.forms.preguntas.primera.value == "b"){
+                correcto++;
+            }else{
+                error.push("primera");
+            }
+            if(document.forms.preguntas.segunda.value == "a"){
+                correcto++;
+            }else{
+                error.push("segunda");
+            }
+            if(document.forms.preguntas.tercera.value == "b"){
+                correcto++;
+            }else{
+                error.push("tercera");
+            }
+            if(document.forms.preguntas.cuarta.value == "c"){
+                correcto++;
+            }else{
+                error.push("cuarta");
+            }
+            if(document.forms.preguntas.quinta.value == "c"){
+                correcto++;
+            }else{
+                error.push("quinta");
+            }
+            var puntuacionCorrecto = correcto*2;
+            var puntuacionError = error.length;
+            var puntuacion = puntuacionCorrecto - puntuacionError;
+
+            alert("Su puntuacion es: " + puntuacion + "\nHas tenido " + correcto + " correctas \n" + "Has tenido " + error.length + " errores \n" + "Has fallado las preguntas: " + error.join(", ") + "\n" + preguntas());
+        }
+    }
+
+    function preguntas(){
+        var correcciones = Array();
+        for(var i = 0; i < error.length; i++){
+            if(error[i] == "primera"){
+                correcciones.push("La respuesta correcta de la primera pregunta es: " + "b - Cristobal Colon \n");
+            }
+            if(error[i] == "segunda"){
+                correcciones.push("La respuesta correcta de la segunda pregunta es: " + "a - Isabel y Fernando \n");
+            }
+            if(error[i] == "tercera"){
+                correcciones.push("La respuesta correcta de la tercera pregunta es: " + "b - Un presidente del gobierno \n");
+            }
+            if(error[i] == "cuarta"){
+                correcciones.push("La respuesta correcta de la cuarta pregunta es: " + "c - 1986 \n");
+            }
+            if(error[i] == "quinta"){
+                correcciones.push("La respuesta correcta de la quinta pregunta es: " + "c - 1936 \n");
+            }
+        }
+        return correcciones;
+    }
+</script>
+
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <form name="preguntas" onsubmit="return false">
+        <label>¿Quien descubrio America?</label><br>
+        <input type="radio" name="primera" value="a"> a) Elvis Presley <br>
+        <input type="radio" name="primera" value="b"> b) Cristobal Colon <br>
+        <input type="radio" name="primera" value="c"> c) Mariano Rajoy <br>
+
+        <label>¿Quienes fueron los reyes católicos?</label><br>
+        <input type="radio" name="segunda" value="a"> a) Isabel y Fernando <br>
+        <input type="radio" name="segunda" value="b"> b) Pepa y Antonio <br>
+        <input type="radio" name="segunda" value="c"> c) Isabelo y Fernanda <br>
+
+        <label>¿Felipe Gonzalez fue?</label><br>
+        <input type="radio" name="tercera" value="a"> a) Un rockero <br>
+        <input type="radio" name="tercera" value="b"> b) Un presidente del gobierno <br>
+        <input type="radio" name="tercera" value="c"> c) Un torero <br>
+
+        <label>¿En que año ingreo España en la cComunidad Economica Europea?</label><br>
+        <input type="radio" name="cuarta" value="a"> a) 2000 <br>
+        <input type="radio" name="cuarta" value="b"> b) 1900 <br>
+        <input type="radio" name="cuarta" value="c"> c) 1986 <br>
+
+        <label>¿En que año estallo la gerra civil española?</label><br>
+        <input type="radio" name="quinta" value="a"> a) 1850 <br>
+        <input type="radio" name="quinta" value="b"> b) 1950 <br>
+        <input type="radio" name="quinta" value="c"> c) 1936 <br>
+
+        <button class="btn btn-primary" onclick="comprobar()">Comprobar</button>
+        <button class="btn btn-warning" onclick="corregir()">Corregir</button>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script lang="text/javascript">
+        var fecha = new Date();
+        var hora = fecha.getHours();
+        var minuto = fecha.getMinutes();
+        var segundo = fecha.getSeconds();
+        function atras(){
+            if(document.forms.cuenta.cuenta_atras.value == "00:00:00"){
+                alert("Cuenta atras terminada");
+                exit(1);
+            }
+            document.forms.cuenta.cuenta_atras.value = cero(hora) + ":" + cero(minuto) + ":" + cero(segundo)
+            // document.write(cero(hora) + ":" + cero(minuto) + ":" + cero(segundo));
+            if(parseInt(segundo) == 00){
+                if(parseInt(minuto) == 00){
+                    if(parseInt(hora) != 00){
+                        hora--;
+                        minuto = 60;
+                    }
+                }else{
+                    minuto--;
+                    segundo = 60;
+                }
+            }else{
+                segundo--;
+            }
+            setTimeout(atras, 1000);
+        }
+        function cero(num){
+            if(num < 10){
+                return "0" + num;
+            }else{
+                return num;
+            }
+        }
+    </script>
+</head>
+<body onload="atras()">
+
+    <form name="cuenta">
+        <label><h1>Cuenta atras</h1></label>
+        <input type="text" name="cuenta_atras">
+    </form>
+
+</body>
+</html>

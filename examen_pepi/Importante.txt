@@ -1,0 +1,4 @@
+El primero es de con alerta
+El segundo es con open
+
+El que quiero me que corrijas es el segundo pero solo funciona en internet explorer
