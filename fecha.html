@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script lang="text/javascript">
+    var dias = Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+    var nombres = Array("D", "L", "M", "X", "J", "V", "S");
+    aux = 1;
+        function fecha(){
+            var fecha_de_nacimiento = document.forms.formulario.fecha_nacimiento.value;
+            var expr = /^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/;
+            if(expr.test(fecha_de_nacimiento)){
+                var array_fecha = fecha_de_nacimiento.split("/");
+                var calendario = new Date(array_fecha[2] + "/" + array_fecha[1] + "/" + array_fecha[0]);
+                var dia = calendario.getDay();
+                document.write("Naciste un " + verDia(dia) + "<br><br>");
+
+                document.write("<table><tr>");
+                for(var i = 0; i < nombres.length ;i++){
+                    document.write("<td>" + nombres[i] + "</td>");
+                }
+                document.write("</tr>");
+                for(var i = 0; i < calendario.getDay(); i++){
+                    document.write("<td></td>");
+                    aux++;
+                }
+                for(var i = array_fecha[0]; i <= dias[calendario.getMonth()]; i++){
+                    if(aux == 8){
+                        document.write("</tr><tr>");
+                            aux = 1;
+                    }
+                    document.write("<td>" + i + "</td>");
+                    aux++;
+                }
+                document.write("</tr></table>");
+
+            }
+        }
+        function verDia(n){
+            switch (n) {
+                case 0:
+                    return "Domingo";
+                break;
+                case 1:
+                    return "Lunes";
+                break;
+                case 2:
+                    return "Martes";
+                break;
+                case 3:
+                    return "Miercoles";
+                break;
+                case 4:
+                    return "Jueves";
+                break;
+                case 5:
+                    return "Viernes";
+                break;
+                case 6:
+                    return "Sabado";
+                break;
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <form name="formulario" onsubmit="return false">
+        <label>Escriba fecha</label>
+        <input type="text" name="fecha_nacimiento" />
+        <button onclick="fecha()">Comprobar</button>
+    </form>
+
+</body>
+</html>
