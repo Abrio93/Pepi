@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <script lang="text/javascript">
+        var dias = Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+        var nombres = Array("MON", "TUES", "WED", "TRU", "FRI", "SAT", "SUN");
+        var fecha = new Date();
+
+        document.write("<table align='center' border='1px SOLID BLACK' cellspacing='0'><tr>");
+
+        for(var i = 0; i < nombres.length ;i++){
+            document.write("<td>" + nombres[i] + "</td>");
+        }
+
+        document.write("</tr><tr>");
+
+        var aux = 0;
+        var aux2 = 0;
+
+        for(var i = 1; i <= dias[0] ;i++){
+            if(aux2 == 0){
+                switch (fecha.getDay()) {
+                    case 0:
+                        document.write("<td></td><td></td><td></td><td></td><td></td><td></td>");
+                        aux = 6;
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        document.write("<td></td>");
+                        aux = 1;
+                        break;
+                    case 3:
+                        document.write("<td></td><td></td>");
+                        aux = 2;
+                        break;
+                    case 4:
+                        document.write("<td></td><td></td><td></td>");
+                        aux = 3;
+                        break;
+                    case 5:
+                        document.write("<td></td><td></td><td></td><td></td>");
+                        aux = 4;
+                        break;
+                    case 6:
+                        document.write("<td></td><td></td><td></td><td></td><td></td>");
+                        aux = 5;
+                        break;
+                }
+                aux2 = 1;
+            }
+            
+            if(fecha.getDate() == i){
+                document.write("<td>" + fecha.getHours() + ":" + fecha.getMinutes() + "</td>");
+            }else{
+                document.write("<td>" + i + "</td>");
+            }
+            aux++;
+            if(aux == 7){
+                document.write("</td><tr>");
+                aux = 0;
+            }
+        }
+
+        document.write("</tr>");
+
+    </script>
+
+</head>
+<body>
+    
+
+
+</body>
+</html>

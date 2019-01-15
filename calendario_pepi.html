@@ -1,0 +1,144 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title></title>
+	<script language="javascript">
+		var hoy=new Date;
+		var d=hoy.getDate();
+		var m=(hoy.getMonth())+1;
+		var meses=new Array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+		var a=hoy.getFullYear();
+		
+		//Para saber qué día de la semana fue el 1 del mes actual		
+		var fecha=new Date;		
+		fecha.setDate(1);
+		fecha.setMonth(m-1);
+		fecha.setFullYear(a);
+		var d_semana1=fecha.getDay();
+			
+		
+		switch(m) 
+		{
+			case 1:
+			case 3:
+			case 5:
+			case 7:
+			case 8:
+			case 10:
+			case 12:
+			{
+				diamax=31;
+				break;			
+			}
+			case 2:
+			{
+				diamax=28;
+				break;		
+			}
+			default:
+			{
+				diamax=30;
+				break;			
+			}
+		}
+		
+		document.write("<table border='1px solid' align='center'>");
+		document.write("<tr align='center'><td colspan='7'>"+meses[m-1]+" "+a+"</td></tr>");
+		document.write("<tr><td>LUNES</td>");
+		document.write("<td>MARTES</td>");
+		document.write("<td>MIÉRCOLES</td>");
+		document.write("<td>JUEVES</td>");
+		document.write("<td>VIERNES</td>");
+		document.write("<td>SÁBADO</td>");
+		document.write("<td>DOMINGO</td></tr>");
+		
+		switch(d_semana1)//Escribimos el día 1 según el día de la semana 
+		{
+			case 0://domingo
+				document.write("<tr align='right'><td></td><td></td><td></td><td></td><td></td><td></td>");			
+				var contador_td=7;
+				break;
+			case 1://lunes
+				document.write("<tr align='right'>");
+				var contador_td=1;			
+				break;
+			case 2://martes
+				document.write("<tr align='right'><td></td>");
+				var contador_td=2;		
+				break;
+			case 3://miércoles
+				document.write("<tr align='right'><td></td><td></td>");
+				var contador_td=3;		
+				break;
+			case 4://jueves
+				document.write("<tr align='right'><td></td><td></td><td></td>");
+				var contador_td=4;		
+				break;
+			case 5://viernes
+				document.write("<tr align='right'><td></td><td></td><td></td><td></td>");
+				var contador_td=5;		
+				break;
+			case 6://sábado
+				document.write("<tr align='right'><td></td><td></td><td></td><td></td><td></td>");
+				var contador_td=6;			
+				break;
+		}		
+		
+				
+		for (i=1;i<=diamax;i++) 
+		{
+			if (i==d) //Para imprimir la hora en el día de hoy
+			{
+				var hora=hoy.getHours();
+				var minutos=hoy.getMinutes();
+				if (hora<10) 
+				{
+					hora="0"+hora;	
+				}
+				if (minutos<10) 
+				{
+					minutos="0"+minutos;	
+				}
+				
+				if (hora<13) 
+				{
+					var ampm=" AM";
+				}
+				else 
+				{
+					var ampm=" PM";					
+				}
+				
+				if (hora>12) 
+				{
+					hora=hora-12;	
+				}
+				
+				document.write("<td>"+i+"<br>"+hora+":"+minutos+ampm+"</td>");
+			}
+			else 
+			{
+				document.write("<td>"+i+"</td>");
+			}
+			
+			if (contador_td==7) 
+			{
+				document.write("</tr>");
+				contador_td=0;
+				if (i!=diamax) 
+				{
+					document.write("<tr align='right'>");	
+				}
+			}
+			contador_td++;	
+		}
+		
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>
