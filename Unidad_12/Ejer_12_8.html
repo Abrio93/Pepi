@@ -5,26 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
+    <style>
+        body{
+            font-weight: bold;
+        }
+        .semana{
+            background-color:#A6CAF0;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .fondo{
+            background-color:#EFD6C6;
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+        }
+
+        .fondo2{
+            background-color:#FFCCCC;
+            padding-bottom: 1rem;
+            padding-top: 1rem;
+            padding-left: 1rem;
+        }
+
+        .espacio{
+            padding-bottom: 1rem;
+            padding-top: 1rem;
+            padding-left: 1rem;
+        }
+    </style>
+
     <script lang="text/javascript">
-        var dias = Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
-        var nombres = Array("MON", "TUES", "WED", "TRU", "FRI", "SAT", "SUN");
-        var fecha = new Date();
+        var dias = Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31); //ARRAY DE LOS DIAS DE CADA MES
+        var nombres = Array("Mon", "Tues", "Wed", "Thu", "Fri", "Sat", "Sun"); //ARRAY DE LOS NOMBRES DE LA SEMANA
+        var meses = Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"); //ARRAY DE LOS NOMBRES DE LOS MESES
+        var fecha = new Date(); //VARIABLE QUE DECLARO LA FECHA COMPLETA DE HOY
+        var fecha2 = new Date(fecha.getFullYear(), fecha.getMonth(), 1); //VARIABLE QUE DECLARO EL DIA 1 DEL MES EN EL QUE ESTAMOS
 
-        document.write("<table align='center' border='1px SOLID BLACK' cellspacing='0'><tr>");
+        document.write("<div class='fondo'><center><h1>CALENDARIO DE JAVASCRIPT</h1></center>")
+        document.write("<center><h4>" + meses[fecha.getMonth()] + " " + fecha.getFullYear() + "</h4></center>")
+        document.write("<table align='center'><tr>");
 
-        for(var i = 0; i < nombres.length ;i++){
-            document.write("<td>" + nombres[i] + "</td>");
+        for(var i = 0; i < nombres.length ;i++){ //IMPRIMO LOS NOMBRES DE LA SEMANA
+            document.write("<td class='semana'>" + nombres[i] + "</td>");
         }
 
         document.write("</tr><tr>");
 
-        var aux = 0;
-        var aux2 = 0;
+        var aux = 0; //VARIABLE PARA SABER CUANTOS SALTOS DA EN LOS DIAS DE LA SEMANA
+        var aux2 = 0; //VARIABLE PARA LA PRIMERA SEMANA
 
-        for(var i = 1; i <= dias[0] ;i++){
+        for(var i = 1; i <= dias[fecha.getMonth()] ;i++){
             if(aux2 == 0){
-                switch (fecha.getDay()) {
-                    case 0:
+                switch (fecha2.getDay()) {
+                    case 7:
                         document.write("<td></td><td></td><td></td><td></td><td></td><td></td>");
                         aux = 6;
                         break;
@@ -55,18 +90,26 @@
             }
             
             if(fecha.getDate() == i){
-                document.write("<td>" + fecha.getHours() + ":" + fecha.getMinutes() + "</td>");
+                if(new Date(fecha.getFullYear(), fecha.getMonth(), i).getDay() == 6 || new Date(fecha.getFullYear(), fecha.getMonth(), i).getDay() == 0){
+                    document.write("<td class='fondo2'>" + fecha.getHours() + ":" + ((fecha.getMinutes() < 10) ? "0" + fecha.getMinutes() : fecha.getMinutes()) + "</td>");
+                }else{
+                    document.write("<td class='espacio'>" + fecha.getHours() + ":" + ((fecha.getMinutes() < 10) ? "0" + fecha.getMinutes() : fecha.getMinutes()) + "</td>");
+                }
             }else{
-                document.write("<td>" + i + "</td>");
+                if(new Date(fecha.getFullYear(), fecha.getMonth(), i).getDay() == 6 || new Date(fecha.getFullYear(), fecha.getMonth(), i).getDay() == 0){
+                    document.write("<td class='fondo2'>" + i + "</td>");
+                }else{
+                    document.write("<td class='espacio'>" + i + "</td>");
+                }
             }
             aux++;
-            if(aux == 7){
+            if(aux == 7){ //CUANDO ACABA LA SEMANA SALTO Y VARIABLE A 0 PARA VOLVER A EMPEZAR LA SEMANA
                 document.write("</td><tr>");
                 aux = 0;
             }
         }
 
-        document.write("</tr>");
+        document.write("</tr></table></div>");
 
     </script>
 
