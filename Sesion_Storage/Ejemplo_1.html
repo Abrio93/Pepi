@@ -1,0 +1,49 @@
+<html>
+    <head>            
+        <title>Ejemplo SesionStorage</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function(){    
+                $('#boton-guardar').click(function(){        
+                    var nom = document.getElementById("nombretxt").value;
+                    var apel = document.getElementById("apellidotxt").value;
+                    sessionStorage.setItem("Nombre", nom); //GUARDO LOS DATOS EN SESIONSTORAGE
+                    sessionStorage.setItem("Apellido", apel); //GUARDO LOS DATOS EN SESIONSTORAGE
+                    document.getElementById("nombretxt").value = "";
+                    document.getElementById("apellidotxt").value = "";
+                });   
+            });
+
+            $(document).ready(function(){    
+                $('#boton-cargar').click(function(){                       
+                    var nombre = sessionStorage.getItem("Nombre"); //OBTENGO LOS DATOS DE SESIONSTORAGE
+                    var apellido = sessionStorage.getItem("Apellido"); //OBTENGO LOS DATOS DE SESIONSTORAGE
+                    document.getElementById("nombre").innerHTML = nombre;
+                    document.getElementById("apellido").innerHTML = apellido; 
+                });   
+            });
+
+            $(document).ready(function(){    
+                $('#boton-borrar').click(function(){                       
+                    sessionStorage.clear(); //BORRAR DATOS DE SESIONSTORAGE
+                });   
+            });
+        </script>
+    </head>
+    <body>
+        <center>
+            <h1>Ejemplo - SesionStorage</h1>
+            <input type="text" placeholder="Nombre" id="nombretxt"> <br>  <br>   
+            <input type="text" placeholder="Apellido" id="apellidotxt"><br>  <br>
+            <button id="boton-guardar">Guardar</button><br>
+            <hr />
+            Nombre almacenado:
+            <label type="text" id="nombre"></label><br>                          
+            Apellido almacenado:
+            <label "text" id="apellido"></label><br>
+            <button id="boton-cargar">Cargar elementos</button>
+            <button id="boton-borrar">Borrar elementos</button>
+        </center>
+        <hr />
+    </body> 
+</html>
