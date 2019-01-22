@@ -9,7 +9,7 @@ function getXMLHTTPRequest(){
         }
         catch(err2) {
             try {
-                obj =new ActiveXObject("Microsoft.XMLHTTP");/*otras versiones IE */
+                obj = new ActiveXObject("Microsoft.XMLHTTP");/*otras versiones IE */
             }
             catch(err3) {
                 obj = false;
@@ -36,10 +36,10 @@ function respuestaServidor() {
     if (xmlhttp.readyState == 4) {
         if(xmlhttp.status == 200) {
         // mandamos una alerta con el texto devuelto por el servidor
-        alert ( xmlhttp.responseText );
+        alert (xmlhttp.responseText);
         }else{
             // mandamos una alerta con el mensaje de error
-            alert ( xmlhttp.statusText);
+            alert (xmlhttp.statusText);
         }
     }
 } 
