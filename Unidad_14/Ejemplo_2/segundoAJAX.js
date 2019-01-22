@@ -44,4 +44,4 @@ function respuestaServidor() {
             alert (xmlhttp.statusText);
         }
     }
-} 
+}
