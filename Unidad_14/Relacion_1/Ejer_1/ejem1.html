@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.01//EN""http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html">
+    <script type="text/javascript" src="primerAJAX.js"></script>
+</head>
+<body>
+    <h1>Vote la foto</h1>
+    <img width="35%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Sasso_lungo_da_passo_pordoi.jpg/1024px-Sasso_lungo_da_passo_pordoi.jpg" />
+    <br />
+    <form name="formulario_puntuacion" onsubmit="return false">
+        Puntuacion: <select name="puntuacion">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        <br />
+        Nombre: <input type="text" name="nombre" />
+        <br />
+        <input type="button" value="Votar" onclick="llamarServidor()" />
+    </form>
+    <br />
+    <div id="respuesta"></div>
+
+</body>
+</html> 
