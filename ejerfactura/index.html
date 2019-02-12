@@ -1,0 +1,85 @@
+<html>
+<script>
+   function recoger(){
+
+var camiseta1 = document.getElementById('camiseta1');
+var camiseta2 = document.getElementById('camiseta2');
+var camiseta3 = document.getElementById('camiseta3');
+    
+var sudadera1 = document.getElementById('sudadera1');
+var sudadera2 = document.getElementById('sudadera2');
+var sudadera3 = document.getElementById('sudadera3');
+       
+
+       
+   }
+
+
+
+
+</script>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+</head>
+<body>
+<form action="recoger.php" method="POST">
+<div class="containar" align="right" border>
+
+<div class="row">
+
+<div class="col-3"><img src="imagenes/camiseta1.jpg" width="140px" height="180px" /><br /><input type="radio" name="camiseta1" id="camiseta1" value="seleccionado"/><b>&nbsp;&nbsp;Camiseta Off White</b><br /><div style="background-color:#FFF700 ; width: 100px;padding-right:3px;">Precio:&nbsp;<b>65€&nbsp;</b></div><br /></div>
+<div class="col-3"><img src="imagenes/camiseta2.jpg" width="150px" height="180px"  /><br /><input type="radio" name="camiseta2" id="camiseta2" value="seleccionado"/><b>&nbsp;&nbsp;Camiseta Palace</b><br /><div style="background-color:#FFF700 ; width: 100px;padding-right:3px;">Precio:&nbsp;<b>22€&nbsp;</b></div></div>
+<div class="col-3"><img src="imagenes/camiseta3.jpg" width="140px" height="180px"  /><br /><input type="radio" name="camiseta3" id="camiseta3" value="seleccionado"/><b>&nbsp;&nbsp;Camiseta Supreme x Jordan</b><br /><div style="background-color:#FFF700 ; width: 100px;padding-right:3px;">Precio:&nbsp;<b>45€&nbsp;</b></div></div>
+</div>
+
+<div class="row mt-5">
+<div class="col-3"><img src="imagenes/sudadera1.jpg" width="170px" height="180px" /><br><input type="radio" name="sudadera1" id="sudadera1" value="seleccionado"/><b>&nbsp;&nbsp;Sudadera Off White</b><br /><div style="background-color:#FFF700 ; width: 100px;padding-right:3px;">Precio:&nbsp;<b>115€&nbsp;</b></div><br /></div>
+<div class="col-3"><img src="imagenes/sudadera2.jpg" width="150px" height="180px" /><br><input type="radio" name="sudadera2" id="sudadera2" value="seleccionado"/><b>&nbsp;&nbsp;Sudadera Supreme</b><br /><div style="background-color:#FFF700 ; width: 100px;padding-right:3px;">Precio:&nbsp;<b>65€&nbsp;</b></div><br /></div>
+<div class="col-3"><img src="imagenes/sudadera3.jpg" width="160px" height="180px" /><br><input type="radio" name="sudadera3" id="sudadera3" value="seleccionado"/><b>&nbsp;&nbsp;Sudadera Gucci</b> <br/><div style="background-color:#FFF700 ; width: 100px;padding-right:3px;">Precio:&nbsp;<b>125€&nbsp;</b></div><br /></div>
+</div>
+<input class="btn btn-primary" type="submit" value="Introducir datos">
+</div>
+
+</form>
+
+<form class="form container" name="formulario" onsubmit="return comprar(this)">
+            <div class="form-group">
+                <select name="zapato" class="form-control">
+                    <option value="">Seleccione producto</option>
+                    <option value="Adidas">Adidas</option>
+                    <option value="Nike">Nike</option>
+                    <option value="Puma">Puma</option>
+                    <option value="OffWhite">OffWhite</option>
+                    <option value="Mustang">Mustang</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="nombre" placeholder="Escriba su nombre" />
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="apellidos" placeholder="Escriba sus apellidos" />
+            </div>
+            <div class="form-group input-group">
+                <input type="text" class="form-control" name="pais" placeholder="Escriba su país" />
+                <input type="text" class="form-control" name="provincia" placeholder="Escriba su provincia" />
+                <input type="text" class="form-control" name="ciudad" placeholder="Escriba su ciudad" />
+            </div>
+            <div class="form-group input-group">
+                <input type="text" class="form-control" name="calle" placeholder="Escriba su calle" />
+                <input type="text" class="form-control" name="numero" placeholder="Escriba su numero" />
+            </div>
+            <div class="form-group">
+                <select name="metodo_pago" class="form-control">
+                    <option value="">Seleccione metodo de pago</option>
+                    <option value="Tarjeta">Tarjeta</option>
+                    <option value="Transferencia">Transferencia</option>
+                    <option value="PayPal">PayPal</option>
+                    <option value="Reembolso">Contra Reembolso</option>
+                </select>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Comprar" />
+            <input type="reset" class="btn btn-danger" value="Vaciar" />
+        </form>
+</body>
+</html>
