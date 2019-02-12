@@ -11,82 +11,42 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="container">
-    <div class="text-center">
-         <h1>Factura</h1>
-    </div>
-
-     <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <!-- <h3 class="panel-title">Cabecera</h3> -->
-					<hr>
-                    <div class="row" style="background-color:green;">
-                        
-                        <div class="col-md-5" style="background-color:white;">
-                            <div class="form-group">
-                                <label for="cliente" class="col-sm-2 control-label">Cliente</label>
-                                <div class="col-sm-10">
-                                    <input class="form-control" value="<?= $_POST['nombre']; ?> <?= $_POST['apellidos']; ?>" id="cliente" placeholder="cliente" type="text">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4" style="background-color:white;">
-                            <div class="form-group">
-                              
-                                <label for="fecha" class="col-sm-5 control-label">Fecha factura</label>
-                                <div class="col-sm-7">
-                                    <input class="form-control" id="fecha" placeholder="fecha factura" type="date">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 target" style="background-color:white;">
-                            <div class="form-group">
-                                <label for="id" class="col-sm-3 control-label">Id</label>
-                                <div class="col-sm-9">
-                                    <input class="form-control" id="id" type="text">
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- row -->
-                    <br>
-                    <div class="row">
-                        <div class="col-md-6"> 
-                          <address>
-                           <strong class="">BERNARDO GINARD PRATS</strong><br class="">
-                            Carrer Ciutadella nº 26 A<br class="">
-                            07008 Palma<br class="">
-                            Illes Balears<br class="">                          
-                           </address>
-                        </div>
-                   </div> <!-- row -->
-				</div> <!-- panel heading -->
-				<div class="panel-body">
-				  <h3 class="panel-title">Detalle</h3>
-				  
-				  <table class="table table-condensed">
-					<thead>
-					  <tr>
-						<th class="">Producto</th>
-						<th class="">cantidad</th>
-						<th class="">precio</th>
-					  </tr>
-					</thead>
-					<tbody>
-					  <tr>
-						<td class=""><?= $_POST['zapato']; ?></td>
-						<td class="">1</td>
-						<td class="">49,59</td>
-					  </tr>
-					</tbody>
-				  </table>
-				</div> <!-- panel body -->
-				<div class="panel-footer">Piefactura
-				</div>
-             </div> <!-- panel -->
-        </div> <!-- col -->
-    </div> <!-- row -->
-</div>    <!-- container -->
+    <table width="100%">
+        <tr>
+            <td><img width="15%" src="logo.png" /></td>
+            <td>
+                <h1 style="text-align: right; margin-right: 2rem;">Zapatería Manga</h1>
+                <p style="text-align: right; margin-right: 2rem;">C/ calle Nº 16</p>
+                <p style="text-align: right; margin-right: 2rem;">21440 Lepe (Huelva)</p>
+                <p style="text-align: right; margin-right: 2rem;">España</p>
+                <p style="text-align: right; margin-right: 2rem;">NIF: 012458745-R</p>
+                <p style="text-align: right; margin-right: 2rem;">infor@zapateriamanga.com</p>
+            </td>
+        </tr>
+    </table>
+    <hr />
+    <p>Factura nº 3256</p>
+    <p><?= $_POST['nombre'].' '.$_POST['apellidos'] ?></p>
+    <p><?= 'C/ '.$_POST['calle'].' Nº'.$_POST['numero'] ?></p>
+    <p><?= $_POST['cp'].' '.$_POST['ciudad'].' ('.$_POST['provincia'].')' ?></p>
+    <p><?= $_POST['pais'] ?></p>
+    <p><?= $_POST['correo'] ?></p>
+    <table class="table" align="center">
+        <tr>
+            <td>#</td>
+            <td>Descripción</td>
+            <td>Precio</td>
+            <td>Cantidad</td>
+            <td>Importe</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td><?= $_POST['zapato'] ?></td>
+            <td>25€</td>
+            <td>1</td>
+            <td>25€</td>
+        </tr>
+    </table>
+    <hr />
 </body>
 </html>

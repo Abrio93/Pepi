@@ -28,6 +28,8 @@ function comprar(form){
     var ciudad = form.ciudad.value;
     var calle = form.calle.value;
     var numero = form.numero.value;
+    var cp = form.cp.value;
+    var correo = form.correo.value;
     var metodo_pago = form.metodo_pago.value;
 
     var url = "pdf.php";
@@ -47,6 +49,8 @@ function comprar(form){
         "&ciudad=" + ciudad +
         "&calle=" + calle +
         "&numero=" + numero +
+        "&cp=" + cp +
+        "&correo=" + correo +
         "&metodo_pago=" + metodo_pago
         );
     return false;
@@ -71,10 +75,10 @@ function generarPDF(){
     archivoPDF.setFilename("PDF");
     archivoPDF.setPageSize(210, 297);
     var contenidoPDF = new PDF24Element();
-    contenidoPDF.setTitle("Compra en Zapateria");
+    contenidoPDF.setTitle("");
     contenidoPDF.setUrl("http://pdf24.org");
-    contenidoPDF.setAuthor("Javier Manga");
-    contenidoPDF.setDateTime("2010-04-15 8:00");
+    contenidoPDF.setAuthor("");
+    contenidoPDF.setDateTime("");
     contenidoPDF.setBody(xmlhttp.responseText);
     archivoPDF.addElement(contenidoPDF);
     archivoPDF.create();
