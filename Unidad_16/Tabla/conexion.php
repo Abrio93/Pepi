@@ -1,5 +1,5 @@
 <?php
-    $conexion = new PDO('mysql:host=localhost;dbname=datos;','root','');
+    $conexion = new PDO('mysql:host=localhost;dbname=pepi;','root','');
 
     
 
@@ -11,14 +11,14 @@
         echo "<br /><table class='table table-hover container'>";
             echo "<tr>";
                 echo "<td>Id</td>";
-                echo "<td>Nombre</td>";
+                echo "<td>nombre</td>";
                 echo "<td>Departamento</td>";
                 echo "<td>Sueldo</td>";
             echo "</tr>";
         foreach($resultado as $empleado){
             echo "<tr>";
-                echo "<td><a href='#' onclick='ver_empleado(".$empleado->id_empleado.")'>".$empleado->id_empleado."</a></td>";
-                echo "<td>".$empleado->nombre."</td>";
+                echo "<td><a href='#' onclick='ver_empleado(".$empleado->idempleado.")'>".$empleado->idempleado."</a></td>";
+                echo "<td>".$empleado->nombres."</td>";
                 echo "<td>".$empleado->departamento."</td>";
                 echo "<td>".$empleado->sueldo."</td>";
             echo "</tr>";
@@ -27,7 +27,7 @@
     }
 
     if(isset($_POST['ver'])){
-        $query = "SELECT * FROM empleados WHERE id_empleado = ".$_POST['ver'];
+        $query = "SELECT * FROM empleados WHERE idempleado = ".$_POST['ver'];
         $sentencia = $conexion->query($query);
         $resultado = $sentencia->fetch(PDO::FETCH_OBJ);
 
@@ -37,9 +37,9 @@
 
         echo '<form id="formulario_empleados" onsubmit="return guardar(this)">';
             echo '<div class="form-group">';
-                echo '<label>Nombre:</label>';
-                echo '<input type="hidden" name="id_empleado" value="'.$resultado->id_empleado.'" />';
-                echo '<input type="text" name="nombre" value="'.$resultado->nombre.'" />';
+                echo '<label>nombres:</label>';
+                echo '<input type="hidden" name="idempleado" value="'.$resultado->idempleado.'" />';
+                echo '<input type="text" name="nombres" value="'.$resultado->nombres.'" />';
             echo '</div>';
             echo '<div class="form-group">';
                 echo '<label>Departamento:</label>';
@@ -57,17 +57,17 @@
                 echo '<label>Sueldo:</label>';
                 echo '<input type="number" name="sueldo" value="'.$resultado->sueldo.'" />';
             echo '</div>';
-            echo '<input type="submit" value="Guardar" />';
+            echo '<input type="submit" value="Actualizar" />';
         echo '</form>';
     }
 
     if(isset($_POST['guardar'])){
-        $query = "UPDATE empleados SET nombre = :nombre, departamento = :departamento, sueldo = :sueldo WHERE id_empleado = :id_empleado";
+        $query = "UPDATE empleados SET nombres = :nombres, departamento = :departamento, sueldo = :sueldo WHERE idempleado = :idempleado";
         $sentencia = $conexion->prepare($query);
-        $sentencia->bindParam(':nombre', $_POST['nombre']);
+        $sentencia->bindParam(':nombres', $_POST['nombres']);
         $sentencia->bindParam(':departamento', $_POST['departamento']);
         $sentencia->bindParam(':sueldo', $_POST['sueldo']);
-        $sentencia->bindParam(':id_empleado', $_POST['guardar']);
+        $sentencia->bindParam(':idempleado', $_POST['guardar']);
         $sentencia->execute();
     }
 

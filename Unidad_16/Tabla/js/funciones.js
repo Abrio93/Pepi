@@ -58,8 +58,8 @@ function respuestaServidorVerEmpleado() {
 }
 
 function guardar(form){
-    var id_empleado = form.id_empleado.value;
-    var nombre = form.nombre.value;
+    var idempleado = form.idempleado.value;
+    var nombres = form.nombres.value;
     var departamento = form.departamento.value;
     var sueldo = form.sueldo.value;
 
@@ -67,7 +67,7 @@ function guardar(form){
     xmlhttp.open('POST',url, true);
     xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
     xmlhttp.onreadystatechange = respuestaServidorGuardar;
-    xmlhttp.send("guardar=" + id_empleado + "&nombre=" + nombre + "&departamento=" + departamento + "&sueldo=" + sueldo);
+    xmlhttp.send("guardar=" + idempleado + "&nombres=" + nombres + "&departamento=" + departamento + "&sueldo=" + sueldo);
     return false;
 }
 
@@ -76,7 +76,7 @@ function respuestaServidorGuardar() {
         if(xmlhttp.status == 200) {
             document.getElementById("formulario").innerHTML = "";
             ver();
-            document.getElementById("respuesta").innerHTML = "Se ha modificado el empleado correctamente";
+            document.getElementById("respuesta").innerHTML = "<center><p style='border: 1px solid black;'>La actualización se realizó correctamente</p></center>";
         }else{
             alert (xmlhttp.statusText);
         }
