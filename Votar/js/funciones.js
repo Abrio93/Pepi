@@ -37,8 +37,8 @@ function llamarPOST(voto){
     var url = "conexionPDO.php";//CONEXIONPDO.PHP O CONEXIONMYSQL.PHP
     xmlhttp.open('POST',url, true);
     xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-    xmlhttp.send("voto=" + voto);
     xmlhttp.onreadystatechange = respuestaServidor;
+    xmlhttp.send("voto=" + voto);
 }
 
 function respuestaServidor() {

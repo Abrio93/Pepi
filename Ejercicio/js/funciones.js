@@ -24,11 +24,18 @@ function llamarPOST(){
     var url = "";//CONEXIONPDO.PHP O CONEXIONMYSQL.PHP
     xmlhttp.open('POST',url, true);
     xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-    xmlhttp.onreadystatechange = respuestaServidor;
+    xmlhttp.onreadystatechange = respuestaServidorPOST;
     xmlhttp.send("nombre=Manga");
 }
 
-function respuestaServidor() {
+function llamarGET(){
+    var url = "";
+    xmlhttp.open("GET", url);
+    xmlhttp.onreadystatechange = respuestaServidorGET;
+    xmlhttp.send(null);
+}
+
+function respuestaServidorPOST() {
     if (xmlhttp.readyState == 4) {
         if(xmlhttp.status == 200) {
             alert(xmlhttp.responseText);
@@ -37,3 +44,12 @@ function respuestaServidor() {
         }
     }
 }
+function respuestaServidorGET() {
+    if (xmlhttp.readyState == 4) {
+        if(xmlhttp.status == 200) {
+            alert (xmlhttp.responseText);
+        }else{
+            alert (xmlhttp.statusText);
+        }
+    }
+} 
