@@ -4,10 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style src="css/autosuggest_inquisitor.css"></style>
+    <script src="js/bsn.AutoSuggest_2.1.3.js"></script>
     <script lang="text/javascript" src="js/funciones.js"></script>
 </head>
 <body>
-    <input type="text" name="sugerencia" onkeyup="llamarPOST(this)" />
-    <div id="respuesta"></div>
+    <form action="" autocomplete="off" onsubmit="return false">
+        <input type="text" id="entrada" />
+        <input type="submit" value="Enviar" />
+    </form>
+
+    <script type="text/javascript">
+        var options = {
+        script: "capturalistaJSON.php?json=true&limit=8&",
+        varname: "sugerencia",
+        json: true,
+        maxresults: 35
+       };
+       var as_json = new bsn.AutoSuggest('entrada', options);
+    </script> 
 </body>
 </html>
