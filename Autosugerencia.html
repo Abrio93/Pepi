@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+</head>
+<body>
+
+	Escribe una palabra: <input type="text" id="palabra"/>
+	
+	<ul id="sugerencia"></ul>
+	
+	</body>
+	
+	<script type="text/javascript">
+		// JavaScript Document
+	
+	var palabras = ["enero", "febrero", "marzo", "abril", "mayo", "junio",
+					"julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+	
+	document.getElementById("palabra").addEventListener("keyup", autosugerir, false);
+	
+	function autosugerir(){
+	
+		var contador = 0;
+	
+		var escribiendo = document.getElementById("palabra").value.toLowerCase();
+	
+		document.getElementById("sugerencia").innerHTML="";
+	
+			if (escribiendo != ""){
+	
+				var caracteres = escribiendo.length;
+	
+				for (x=0; x < palabras.length; x++){
+	
+					var pArray = new String(palabras[x]);
+	
+					var sugerencia = pArray.substring(0,caracteres);
+	
+					if (sugerencia == escribiendo){
+	
+						contador++;
+						var ul = document.getElementById("sugerencia");
+						var new_li = document.createElement('li');
+						new_li.className = pArray;
+						new_li.style.cursor = "pointer";
+						new_li.innerHTML = "Quizás quiso decir " + pArray;
+						ul.appendChild(new_li);
+						new_li.addEventListener("click", aceptar, false);
+	
+					}
+	
+				}
+	
+				if (contador == 0){
+	
+					var ul = document.getElementById("sugerencia");
+					var new_li = document.createElement('li');
+					new_li.innerHTML = "No hay sugerencias";
+					ul.appendChild(new_li);
+	
+				}
+	
+			}
+	
+			else {
+	
+				var ul = document.getElementById("sugerencia");
+				var new_li = document.createElement('li');
+				new_li.innerHTML = "No hay sugerencias";
+				ul.appendChild(new_li);
+	
+			}
+	
+	}
+	
+	function aceptar(){
+	
+			document.getElementById("sugerencia").innerHTML="";
+			var palabraSeleccionada = this.className;
+			var cajaTexto = document.getElementById("palabra");
+			cajaTexto.value = palabraSeleccionada;
+	
+	}
+	</script>
+</html>

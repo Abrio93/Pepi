@@ -4,24 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style src="css/autosuggest_inquisitor.css"></style>
     <script src="js/bsn.AutoSuggest_2.1.3.js"></script>
-    <script lang="text/javascript" src="js/funciones.js"></script>
+    <style>
+        .autosuggest{
+            background-color: rgb(126, 91, 224);
+        }
+
+        .autosuggest ul{
+            list-style: none;
+        }
+
+        .autosuggest a{
+            color: white;
+        }
+    </style>
 </head>
-<body>
-    <form action="" autocomplete="off" onsubmit="return false">
-        <input type="text" id="entrada" />
-        <input type="submit" value="Enviar" />
-    </form>
+<body class="ml-2">
+        <h2>Escriba un país</h2>
+        <form class="form-inline" autocomplete="off" onsubmit="return leer(this)">
+            <input type="text" id="entrada" name="pais" class="form-control" placeholder="Ejemplo argentina" />
+            <input type="submit" class="btn btn-primary" />
+        </form>
 
     <script type="text/javascript">
         var options = {
         script: "capturalistaJSON.php?json=true&limit=8&",
         varname: "sugerencia",
         json: true,
-        maxresults: 35
+        maxresults: 35,
+        timeout: 5000,
+        noresults: 'Lo siento, no se han encontrado resultados'
        };
        var as_json = new bsn.AutoSuggest('entrada', options);
+
+       function leer(form){
+        alert(form.pais.value);
+        form.pais.value = '';
+        return false;
+       }
+
     </script> 
 </body>
 </html>
